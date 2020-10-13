@@ -1,1 +1,1 @@
-# assistant-sdl-mte
+# Watson Assistant with SDL Machine Translation Edge
