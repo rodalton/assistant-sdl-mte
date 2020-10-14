@@ -18,20 +18,17 @@ The sequence diagram below outlines the set of calls made between services. Note
 
 #### Cloud Functions
 
-##### Step 1 
-Use the `sdl_mte_translate.js` file from this repository to create two IBM Cloud Functions actions. Use one action to translate text from the end user being sent to Watson Assistant and another to translate the text returned from Watson Assistant before it's returned to the end user in the web chat UI. 
-##### Step 2
-Update each action with your SDL MTE API Key and the appropriate `languagePairId`. 
-##### Step 3
-Finally, allow your Cloud Functions actions to handle HTTP events and expose as a web action. Make a note of the endpoint URL as you'll require this when customising the web chat UI. 
+**Step 1.** Use the `sdl_mte_translate.js` file from this repository to create two IBM Cloud Functions actions. Use one action to translate text from the end user being sent to Watson Assistant and another to translate the text returned from Watson Assistant before it's returned to the end user in the web chat UI. 
+
+**Step 2.** Update each action with your SDL MTE API Key and the appropriate `languagePairId`. 
+
+**Step 3.** Finally, allow your Cloud Functions actions to handle HTTP events and expose as a web action. Make a note of the endpoint URL as you'll require this when customising the web chat UI. 
 
 #### Web Chat UI
 
-##### Step 1
-Use the `translate.html` file from this repository to launch a web chat UI that includes custom `pre:send` and `pre:receive` events. 
+**Step 1.** Use the `translate.html` file from this repository to launch a web chat UI that includes custom `pre:send` and `pre:receive` events. 
 
-##### Step 2
-Include details of your assistant and Cloud Functions actions (from the step above) in the file before launching. 
+**Step 2.** Include details of your assistant and Cloud Functions actions (from the step above) in the file before launching. 
 
 #### Launch
 Here's the easy bit, once you launch the web chat UI, your assistant should be fully functional, but in a new language thanks to the SDL MTE service! 
