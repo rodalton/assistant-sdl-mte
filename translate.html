@@ -3,7 +3,7 @@
 <script>
   window.watsonAssistantChatOptions = {
       integrationID: "<INTEGRATION_ID>", // The ID of this integration.
-      region: "eu-gb", // The region your integration is hosted in.
+      region: "<REGION>", // The region your integration is hosted in.
       serviceInstanceID: "<SERVICE_INSTANCE_ID>", // The ID of your service instance.
       onLoad: function(instance) {
         instance.on({ type: "pre:receive", handler: preReceiveHandler });
@@ -22,7 +22,7 @@
     const text = event.data.input.text;
     if(text){
       return new Promise(function(resolve) {
-        url='https://eu-de.functions.appdomain.cloud/api/v1/web/rodalton_dev/default/sdl_translate_any_eng.json?input=' + text;
+        url='<CF_ENDPOINT>?input=' + text;
         $.get(url, (t_result, status) => {
           event.data.input.text = t_result.message;
           resolve();
@@ -39,7 +39,7 @@
       if (item.response_type === "text") {
         const text = item.text;
         return new Promise(function (resolve) {
-          translator_url = 'https://eu-de.functions.appdomain.cloud/api/v1/web/rodalton_dev/default/sdl_translate_eng_fra.json?input=' + text;
+          translator_url = '<CF_ENDPOINT>?input=' + text;
           $.get(translator_url, (t_result) => {
             item.text = t_result.message;
             resolve();
