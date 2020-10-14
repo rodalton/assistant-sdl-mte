@@ -2,6 +2,8 @@
 
 ### Introduction
 
+The SDL Machine Translation Edge service makes building a multilingual virtual agent with Watson easy. 
+
 Use the code and instructions from this repository to integrate the **SDL Machine Translation Edge** (MTE) service with **Watson Assistant**. Integration is achieved using Watson Assistant [web chat events](https://web-chat.global.assistant.watson.cloud.ibm.com/docs.html?to=api-events) and IBM Cloud functions. We use the web chat `pre:send` and `pre:receive` events to call IBM Cloud Functions actions. The IBM Cloud Functions actions make calls to SDL MTE REST API. We use the quick translation method of the SDL MTE API to translate. 
 
 ### Solution Outline
